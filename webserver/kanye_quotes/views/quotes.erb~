@@ -1,0 +1,6 @@
+<html>
+	<body>
+		<p><%= quote %></p>
+	</body>
+	<a href="http://localhost:5555/">Home</a>
+</html>

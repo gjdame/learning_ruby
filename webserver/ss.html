@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="HandheldFriendly" content="true">
+	<meta name="viewport" content="width=device-width">
+	<title>Statuspage</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.js"
+  integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
+  crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id=#banner>
+	<nav  id="navbar">
+		<ul>
+			<li>
+				<div class="logo">
+					<a href="javascript:void(0)"><img src="https://statuspage-marketing-cdn.atlassian.com/dam/jcr:4e7ec08f-445f-4917-b9de-b836b29c0dbc/Statuspage-Attribution-blue-rgb.svg?cdnVersion=kf, https://www.statuspage.io/"></a>
+					<ul>
+						<div>
+						<li id="features_inner"><a href="#">Features &#8964;</a>
+							<ul id="inner3">
+								<li><a href="#">Core</a></li>
+								<li><a href="#">Notifications</a></li>
+								<li><a href="#">Uptime & Performance</a></li>
+								<li><a href="#">Private Pages</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Pricing</a></li>
+						</div>						<div>
+						<li id="customers_inner"><a href="#">Customers &#8964;</a>
+							<ul id="inner4">
+								<li><a href="#">SaaS</a></li>
+								<li><a href="#">DevTools</a></li>
+								<li><a href="#">IT</a></li>
+								<li><a href="#">Universities</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Integrations</a></li>
+						</div>
+					</ul>
+				</div>
+			</li>
+			<li><a href="#">Features &#8964;</a>
+				<ul id="inner">
+					<li><a href="#">Core</a></li>
+					<li><a href="#">Notifications</a></li>
+					<li><a href="#">Uptime & Performance</a></li>
+					<li><a href="#">Private Pages</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Pricing</a></li>
+			<li><a href="#">Customers &#8964;</a>
+				<ul id="inner_2">
+					<li><a href="#">SaaS</a></li>
+					<li><a href="#">DevTools</a></li>
+					<li><a href="#">IT</a></li>
+					<li><a href="#">Universities</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Integrations</a></li>
+
+			<div class="right_nav">
+				<li id="log_in"><a href="#">Log in</a></li>
+				<li id="sign_up"><a href="#"><button>Sign up</button></a></li>
+			</div>
+		</ul>
+	</nav>
+</div>
+	<div class="intro">
+		<div class="intro-left">
+			<h2>
+			<span class="text_before_word">
+				The #1 status and incident <br />
+				communication tool.<br />
+				Just ask </span>
+			<span id="word">Twilio.</span>
+			<script>
+				let words = ['Citrix.', 'Reddit.', 'Kickstarter.', 'Dropbox.'],
+					element = document.getElementById("word");
+					currentWord = -1;
+				window.setInterval(function() {
+					currentWord++;
+					if(currentWord > words.length) currentWord = 0;
+					element.textContent = words[currentWord];
+				}, 4000);
+			</script>
+			</h2>
+			<div class=introBtn>
+			<button class="tryForFree">
+				Try it free
+			</button>
+			</div>
+			<a href="#"><i class="fa fa-play-circle"></i>  Here's how it works</a>
+		</div>
+		<div class="intro-right">
+		</div>
+	</div>
+	<div id="wave">
+		<svg xmlns="http://www.w3.org/2000/svg" class="curve-container__curve curve-three" viewBox="0 0 1440 68" enable-background="new 0 0 1440 68"><path d="m1622.3 1937.7c0 0-410.7 169.1-913.4 75.5-502.7-93.6-977.7 56.3-977.7 56.3v440h1891.1v-571.8" fill="white" transform="translate(0-1977)"></path></svg>
+	</div>
+	<div class="title" id="grey_title">
+		<h2>Your way to turn a bad situation into a memorable customer<br>experience</h2>
+	</div>
+	<div class="containerTop">
+		<div class="topLeft">
+			<p id="top_title">SUPPORT & DEV TEAMS</p>
+			<h2> Cut support costs</h2>
+			<p>Whether it's a server issue, bug in production, or DDoS<br>attack, the simple truth is that downtime happens. Launch<br> your status page to ditch the flood of support emails and<br> let your team focus on fixing the problem at hand.</p>
+		</div>
+		<div class="topRight">
+		</div>
+	</div>
+	<div class="containerMid">
+		<div class="mid_left">
+		</div>
+		<div class="mid_right">
+			<p id="top_title">END USERS</p>
+			<h2>Build customer trust</h2>
+			<p>Customers value transparency. Allow them to opt into real<br>-time incident and scheduled maintenance notifications via<br> Email, SMS, or Webhook. Trust us, they’ll thank you.</p>
+		</div>
+	</div>
+	<div class="spacer">
+	</div>
+	<div class="containerBottom">
+		<div class="bottomLeft">
+			<p id="top_title">SALES & MARKETING TEAMS</p>
+			<h2>Showcase reliability</h2>
+			<p>Downtime communication is only part of the story when it<br> comes to status pages. Tell the other 99.95% of your story<br> with Uptime Showcase by surfacing your availability and <br>reliability to prospective customers. </p>
+		</div>
+		<div class="bottomRight">
+		</div>
+	</div>
+	<div class="spacer">
+		<hr>
+	</div>
+	<div class="title">
+		<h2>Here are a few of our happiest customers</h2>
+		<p id="customers_title">We're trusted by thousands of companies across web tech</p>
+	</div>
+	<div class="customers">
+		<div class="wrapper">
+			<div class="customerBox">
+				<div class="customerBox_img">
+					<img src="new-relic@2x.png">
+				</div>
+				<div class="customerBox_info">
+					<h4>New Relic</h4>
+					<a href="#">View Status Page</a>
+				</div>
+			</div>
+			<div class="customerBox">
+				<div class="customerBox_img">
+					<img src="twilio@2x.png">
+				</div>
+				<div class="customerBox_info">
+					<h4>Twilio</h4>
+					<a href="#">View Status Page</a>
+				</div>
+			</div>
+			<div class="customerBox">
+				<div class="customerBox_img">
+					<img src="dropbox@2x.png" style="height:200px; width: 267px;">
+				</div>
+				<div class="customerBox_info">
+					<h4>Dropbox</h4>
+					<a href="#">View Status Page</a>
+				</div>
+			</div>
+			<div class="customerBox">
+				<div class="customerBox_img">
+					<img src="gotomeeting@2x.png">
+				</div>
+				<div class="customerBox_info">
+					<h4>GoToMeeting</h4>
+					<a href="#">View Status Page</a>
+				</div>
+			</div>
+			<div class="customerBox">
+				<div class="customerBox_img">
+					<img src="digitalocean@2x.png">
+				</div>
+				<div class="customerBox_info">
+					<h4>DigitalOcean</h4>
+					<a href="#">View Status Page</a>
+				</div>
+			</div>
+			<div class="customerBox">
+				<div class="customerBox_img">
+					<img src="shopify@2x.png">
+				</div>
+				<div class="customerBox_info">
+					<h4>Shopify</h4>
+					<a href="#">View Status Page</a>
+				</div>
+			</div>
+			<div class="customerBox">
+				<div class="customerBox_img">
+					<img src="recurly@2x.png">
+				</div>
+				<div class="customerBox_info">
+					<h4>Recurly</h4>
+					<a href="#">View Status Page</a>
+				</div>
+			</div>
+			<div class="customerBox">
+				<div class="customerBox_img">
+					<img src="coinbase@2x.png">
+				</div>
+				<div class="customerBox_info">
+					<h4>Coinbase</h4>
+					<a href="#">View Status Page</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="spacer"></div>
+	<div class="spacer">
+		<hr>
+	</div>
+	<div class="testimonial">
+		<div class="testimonial_wrapper">
+			<div class="testimonialBox">
+				<div class="testimonialBox_img_Dropbox"></div>
+				<div class="testimonialBox_info">
+					<img src="logoDropbox-1.svg">
+					<h3>“One of the best things about Statuspage is that even<br> if Dropbox is down, it’s always up.”</h3>
+					<h4>Gavin Gillock</h4>
+					<p>Global Program Manager</p>
+					<a href="#"><i class="fa fa-play-circle"></i> See their story</a>
+				</div>
+			</div>
+			<div class="testimonialBox">
+				<div class="testimonialBox_img_DigitalOcean"></div>
+				<div class="testimonialBox_info">
+					<img src="logoDigitalOcean.svg">
+					<h3>“Proactive Statuspage notifications drive down ticket<br> volume during an incident.”</h3>
+					<h4>Zachary Bouzan-Kaloustian</h4>
+					<p>Director of Customer Support</p>
+					<a href="#"><i class="fa fa-play-circle"></i> See their story</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id='blueWave'>
+			<svg xmlns="http://www.w3.org/2000/svg" class="curve-container__curve curve-two" viewBox="0 0 1440 68" enable-background="new 0 0 1440 68"><path d="m1622.3 1937.7c0 0-410.7 169.1-913.4 75.5-502.7-93.6-977.7 56.3-977.7 56.3v440h1891.1v-571.8" fill="#0052CC" transform="translate(0-1977)"></path></svg>
+		</div>
+	<div class="blueCont">
+
+		<div class="title" id="blue_title">
+			<h2>How can Statuspage help you?</h2>
+			<p>Having a status page benefits the whole organization</p>
+		</div>
+		<div class="spacer">
+		</div>
+		<div class="blueCont_teams">
+			<div class="blueCont_img"></div>
+			<ul class="blueCont_wrapper">
+				<li class="BlueBox">
+					<div class=blue_title>
+						<img src="organize-infinite.svg">
+						<h3>DevOps Teams</h3>
+					</div>
+					<p>When servers are on fire, your team needs to be focused on fixing the issue at hand<br> - not responding to an endless amount of internal emails. With Statuspage, your<br> Dev and Operations teams can communicate efficiently and effectively, giving you<br> the space needed to resolve incidents.</p>
+					<a href="#">Learn more &rarr;</a>
+				</li>
+				<li class="BlueBox">
+					<div class=blue_title>
+						<img src="admin-agent.svg">
+						<h3>Support Teams</h3>
+					</div>
+					<p>Downtime doesn't have to be a support nightmare. Our customers have seen<br> dramatic reductions in support tickets after launching their status pages. Point <br>customers to your new status page a few times and they'll learn to both check the<br> status page and subscribe to proactive notifications instead of contacting support.</p>
+					<a href="#">Learn more &rarr;</a>
+				</li>
+				<li class="BlueBox">
+					<div class=blue_title>
+						<img src="admin-tools.svg">
+						<h3>IT Teams</h3>
+					</div>
+					<p>Statuspage isn’t just for your customers, it’s for your employees too! Hundreds of<br> companies are using Statuspage internally to communicate around IT and third<br> party cloud services. With the Jira Service Desk integration, IT Managers are saving<br> hours per week by embedding IT incidents directly on internal help desks.</p>
+					<a href="#">Learn more &rarr;</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="title">
+		<h2>Pricing that scales with you as you grow</h2>
+		<p>No minimum contracts, no sign-up fees, no cancellation fees</p>
+	</div>
+	<div class="pricing">
+		<center>
+			<input type="radio" name="tabs" id="public_page" checked="checked">
+			<label for="public_page" id="public_label">Public Page</label>
+
+			<input type="radio" name="tabs" id="private_page">
+			<label for="private_page">Private Page</label>
+
+			<section id="public_content">
+				<div class="pricing_content">
+					<div class="price_box">
+						<div class="price_box_top">
+							<h3>Hobby</h3>
+							<h1>$29</h1>
+							<p>/month</p>
+							<button>Get started today</button>
+						</div>
+						<div class="price_box_bottom">
+							<ul>
+								<li>250 Subscribers</li>
+								<li>2 Team Members</li>
+    							<li>2 Metrics</li>
+							    <li>Email Notifications</li>
+							    <li>Basic Customization</li>
+							    <li>Status & Authenticated API</li>
+							</ul>
+						</div>
+					</div>
+					<div class="price_box">
+						<div class="price_box_top">
+							<h3>Startup</h3>
+							<h1>$99</h1>
+							<p>/month</p>
+							<button>Get started today</button>
+						</div>
+						<div class="price_box_bottom">
+							<ul>
+								<li>1,000 Subscribers</li>
+								<li>10 Team Members</li>
+    							<li>10 Metrics</li>
+							    <li>Email/SMS/Webhook Notifications</li>
+							    <li>Custom CSS</li>
+							    <li>Status & Authenticated API</li>
+							    <li>Team Member SSO</li>
+							</ul>
+						</div>
+					</div>
+					<div class="price_box">
+						<div class="price_box_top">
+							<h3>Business</h3>
+							<h1>$399</h1>
+							<p>/month</p>
+							<button>Get started today</button>
+						</div>
+						<div class="price_box_bottom">
+							<ul>
+								<li>5,000 Subscribers</li>
+								<li>25 Team Members</li>
+    							<li>25 Metrics</li>
+							    <li>Email/SMS/Webhook Notifications</li>
+							    <li>Custom CSS/HTML/JS</li>
+							    <li>Status & Authenticated API</li>
+							    <li>Team Member SSO</li>
+							    <li>Component Subscriptions</li>
+							    <li>Yearly PO & Invoicing Available</li>
+							</ul>
+						</div>
+					</div>
+					<div class="price_box">
+						<div class="price_box_top">
+							<h3>Enterprise</h3>
+							<h1>$1,499</h1>
+							<p>/month</p>
+							<button>Request demo</button>
+						</div>
+						<div class="price_box_bottom">
+							<ul>
+								<li>25,000 Subscribers</li>
+								<li>50 Team Members</li>
+    							<li>50 Metrics</li>
+							    <li>Email/SMS/Webhook Notifications</li>
+							    <li>Custom CSS/HTML/JS</li>
+							    <li>Status & Authenticated API</li>
+							    <li>Team Member SSO</li>
+							    <li>Component Subscriptions</li>
+							    <li>Yearly PO & Invoicing Available</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="private_content">
+				<div class="pricing_content">
+					<div class="price_box">
+					<div class="price_box_top">
+							<h3>Starter</h3>
+							<h1>$79</h1>
+							<p>/month</p>
+							<button>Get started today</button>
+						</div>
+						<div class="price_box_bottom">
+							<ul>
+								<li>5 Team Members</li>
+								<li>50 Employees</li>
+    							<li>5 Metrics</li>
+							    <li>Email Notifications</li>
+							    <li>Custom CSS</li>
+							    <li>Incident Templates</li>
+							    <li>PagerDuty & VictorOps Integrations</li>
+							    <li>Team Member & Employee SSO</li>
+							</ul>
+						</div>
+					</div>
+					<div class="price_box">
+						<div class="price_box_top">
+							<h3>Growth</h3>
+							<h1>$249</h1>
+							<p>/month</p>
+							<button>Get started today</button>
+						</div>
+						<div class="price_box_bottom">
+							<ul>
+								<li>15 Team Members</li>
+								<li>300 Employees</li>
+    							<li>15 Metrics</li>
+    							<li>Email/SMS/Webhook Notifications</li>
+							    <li>Custom CSS/HTML/JS</li>
+							    <li>Incident Templates</li>
+							    <li>PagerDuty & VictorOps Integrations</li>
+							    <li>Component Subscriptions</li>
+							    <li>IP Whitelisting</li>
+							    <li>Team Member & Employee SSO</li>
+							</ul>
+						</div>
+					</div>
+					<div class="price_box">
+						<div class="price_box_top">
+							<h3>Corporate</h3>
+							<h1>$599</h1>
+							<p>/month</p>
+							<button>Get started today</button>
+						</div>
+						<div class="price_box_bottom">
+							<ul>
+								<li>35 Team Members</li>
+								<li>1,000 Employees</li>
+    							<li>35 Metrics</li>
+    							<li>Email/SMS/Webhook Notifications</li>
+							    <li>Custom CSS/HTML/JS</li>
+							    <li>Incident Templates</li>
+							    <li>PagerDuty & VictorOps Integrations</li>
+							    <li>Component Subscriptions</li>
+							    <li>IP Whitelisting</li>
+							    <li>Team Member & Employee SSO</li>
+							    <li>Yearly PO & Invoicing Available</li>
+							</ul>
+						</div>
+					</div>
+					<div class="price_box">
+						<div class="price_box_top">
+							<h3>Enterprise</h3>
+							<h1>$1,499</h1>
+							<p>/month</p>
+							<button>Request demo</button>
+						</div>
+						<div class="price_box_bottom">
+							<ul>
+								<li>50 Team Members</li>
+								<li>5,0000 Employees</li>
+    							<li>50 Metrics</li>
+    							<li>Email/SMS/Webhook Notifications</li>
+							    <li>Custom CSS/HTML/JS</li>
+							    <li>Incident Templates</li>
+							    <li>PagerDuty & VictorOps Integrations</li>
+							    <li>Component Subscriptions</li>
+							    <li>IP Whitelisting</li>
+							    <li>Team Member & Employee SSO</li>
+							    <li>Yearly PO & Invoicing Available</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+		</center>
+	</div>
+
+	<div class="spacer"></div>
+	<div class="spacer"></div>
+	<div class="blue_divider">
+		<div class="title">
+			<h2>See Statuspage in action. Sign up for a demo.</h2>
+			<p>Get to know the ins and outs of Statuspage. Book your spot for a 30-minute product overview with live Q&A.</p>
+			<button><b>Sign up</b></button>
+		</div>
+	</div>
+	<div class="spacer"></div>
+	<div class="page_directory">
+		<section id="logo"></section>
+		<section>
+			<h3>Products</h3>
+			<ul>
+				<li><a href="#">Features</a></li>
+				<li><a href="#">Pricing</a></li>
+				<li><a href="#">Customers</a></li>
+				<li><a href="#">Integrations</a></li>
+				<li><a href="#">Register for demo</a></li>
+				<li><a href="#">Better error pages</a></li>
+			</ul>
+		</section>
+		<section>
+			<h3>Community</h3>
+			<ul>
+				<li><a href="#">Blog</a></li>
+				<li><a href="#">Twitter</a></li>
+				<li><a href="#">Atlassian Community</a></li>
+				<li><a href="#">Customer Survey</a></li>
+				<li><a href="#">HugOps</a></li>
+			</ul>
+		</section>
+		<section>
+			<h3>Support</h3>
+			<ul>
+				<li><a href="#">Metastatuspage.com</a></li>
+				<li><a href="#">API Docs</a></li>
+				<li><a href="#">Knowledge Base</a></li>
+				<li><a href="#">Email us</a></li>
+			</ul>
+		</section>
+		<section>
+			<h3>Legal</h3>
+			<ul>
+				<li><a href="#">Customer Agreement</a></li>
+				<li><a href="#">Privacy Policy</a></li>
+				<li><a href="#">Security</a></li>
+			</ul>
+		</section>
+	</div>
+	<hr>
+	<div class="footer">
+		<section>
+			<ul>
+				<p>&#x1F310; Languages</p>
+			</ul>
+		</section>
+		<section>
+			<p> Privacy Policy</p>
+		</section>
+		<section>
+			<p> Terms of use</p>
+		</section>
+		</section>
+		<section>
+			<p>Copyright &copy; 2018 Atlassian</p>
+		</section>
+		</section>
+		<section id="social">
+			<img src="image.png">
+		</section>
+	<div>
+<script>
+		window.onscroll = function() {
+			myFunction()
+		};
+
+		var navbar = document.getElementById("banner");
+		var sticky = navbar.offsetTop;
+
+		function myFunction() {
+	  		if (window.pageYOffset >= sticky) {
+	    	navbar.classList.add("sticky")
+	  		} else {
+	    	navbar.classList.remove("sticky");
+	  		}
+		}
+</script>
+</body>
+</html>

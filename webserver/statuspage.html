@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+.navbar {
+	overflow: hidden;
+	background-color: yellow;
+}
+#logo {
+	width: 180px;
+	height: 160px;
+	margin: 0 auto;
+	margin-top: -30px;
+	margin-bottom: -75px;
+}
+.navbar a {
+	float:left;
+	display: block;
+	color: blue;
+	text-align: center;
+	padding: 14px 16px;
+}
+
+.dropdown {
+	overflow: hidden;
+	float: left;
+}
+.dropdown .dropbtn {
+	border: none;
+	outline: none;
+	color: blue;
+	background-color: inherit;
+}
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: white;
+	min-width: 160px;
+	box-shadow: 2px 2px 2px 2px;
+	z-index: 1;
+}
+.dropdown-content a{
+	float: none;
+	padding: 12px 16px;
+	display: block;
+	text-align: left;
+	color: blue;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+	background-color: white;
+	color: blue;
+}
+
+.dropdown-content a:hover {
+	background-color: blue;
+	color: white;
+}
+.dropdown:hover .dropdown-content{
+	display: block
+}
+
+@media screen and (max-width: 600px) {
+	.navbar a:not(:first-child), .dropdown, .dropbtn {
+		display: none;
+	}
+	.navbar a.icon {
+		float: left;
+		display: block;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.navabar.responsive {
+		position: relative;
+	}
+	.navbar.responsive .icon {
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+	.navbar.responsive a {
+		float: none;
+		display: block;
+		text-align: left;
+	}
+	.navbar.responsive .dropdown {
+		float:none;
+	}
+	.navbar.responsive .dropdown-content {
+		position: relative;
+	}
+	.navbar.responsive .dropdown .dropbtn {
+		display: block;
+		width : 100%;
+		text-align: left;
+	}
+}
+
+</style>
+</head>
+<body>
+	<div class="navbar" id="navbar">
+		<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunc()"><img src="https://statuspage-marketing-cdn.atlassian.com/dam/jcr:4e7ec08f-445f-4917-b9de-b836b29c0dbc/Statuspage-Attribution-blue-rgb.svg?cdnVersion=kf, https://www.statuspage.io/" id="logo"></a>
+		<a href="#features">
+			<div class=dropdown>
+				<button class="droptbn">Features
+					<i class="fa fa-caret-down"></i>
+				</button>
+					<div class="dropdown-content">
+						<a href="#">Test</a>
+						<a href="#">Test</a>
+						<a href="#">Test</a>
+					</div>
+				</div>
+		</a>
+		<a href="#pricing">Pricing</a>
+		<a href="#customers">Customers</a>
+		<a href="#integrations">Integrations</a>
+		<a href="#logIn">Log in</a>
+		<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunc()">Sign up</a>
+	</div>
+<div>
+	Hello
+</div>
+<script>
+	function myFunc() {
+		var nav = document.getElementById("navbar");
+		if (nav.className === "navbar") {
+			nav.className += "responsive";
+		} else {
+			nav.className = "navbar";
+		}
+	}
+</script>
+</body>
+</html>

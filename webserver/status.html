@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Statuspage</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.js"
+  integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
+  crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://statuspage-marketing-cdn.atlassian.com/assets/build/css/wpl-main.min.css?cdnVersion=kg" id="main-css">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			font-family: 'charlie-sans';
+		}
+		h2 {
+			color: #253858;
+			font-family: 'charlie-sans';
+		}
+		.header {
+			position: fixed;
+			width: 100%;
+			height: 70px;
+			background: white;
+		}
+		.sub-header {
+			position: relative;
+			width: 1200px;
+			height: 70px;
+			margin: 0 auto;
+			background: white;
+		}
+		.sub-header.active {
+			width: 100%;
+			height: 100px;
+		}
+		.sub-header .left-menu{
+			float: left;
+		}
+		.sub-header .right-menu{
+			float:right;
+		}
+		.sub-header .logo{
+
+			width: 160px;
+			height: 120px;
+
+		}
+		.sub-header ul li {
+			float: left;
+			list-style: none;
+			min-width: 120px;
+			line-height: 50px;
+			font-size: 16px;
+			letter-spacing: 1px;
+			height: 20px;
+			margin: 20px 8px;
+		}
+
+		.sub-header.active ul li{
+			margin: 20px 8px;
+		}
+		.sub-header ul li a {
+			background: white;
+			color: #0052CC;
+			display: block;
+			text-align: center;
+			font-family: 'charlie-sans';
+			text-decoration: none;
+		}
+		.sub-header.active ul li a {
+			color: blue;
+		}
+
+		.sub-header ul li:hover a {
+			background: white;
+			border-radius: 2px;
+		}
+
+		.logo .dropbtn {
+			display: none;
+		}
+
+		.sub-header .dropdown {
+			float: center;
+			display: none;
+			color: black;
+		}
+		@media screen and (max-width: 800px) {
+			.sub-header .logo {
+				position: fixed;
+				top: 2;
+			}
+			.sub-header .dropdown {
+				position: relative;
+				margin-left: 165px;
+				display: block;
+			}
+
+			.right-menu .signup {
+				position: fixed;
+				right: 5%;
+				top: 2;
+			}
+
+			.left-menu li:not(:first-child), a {
+				display: none;
+			}
+			.right-menu li:not(:last-child), a {
+				display: none;
+			}
+		}
+
+		.intro {
+			background-color: #F4F5F7;
+			height: 720px;
+			display: inline-flex;
+			align-items: center;
+			width: 100%;
+		}
+		.intro-left {
+			display: flex;
+			flex-direction: column;
+			justify-content: left;
+			text-align: left;
+			line-height: 40px;
+			font-size: 20px;
+			width: 50%;
+			float: left;
+			margin-top: 5%;
+			margin-left: 15%;
+		}
+		.intro-left button {
+			width: 90px;
+			height: 40px;
+			background-color: #0052CC;
+			color: white;
+			border: none;
+			font-size: 15px;
+			border-radius: 4px;
+		}
+
+		.intro-left a {
+			color: #0052CC;
+			font-family: 'charlietext';
+			text-decoration: none;
+		}
+
+		.intro-left .introBtn {
+			padding-top: -1%;
+			padding-bottom: 3%;
+		}
+		.intro-right {
+			background-image: url("StatusPage_spot-hero.01.png");
+			height: inherit;
+			background-size: contain;
+			background-repeat: no-repeat;
+			float: right;
+			width: 60%;
+			margin-right: 10%;
+			margin-top: 20%;
+		}
+		#wave{
+			background-color: #F4F5F7;
+			margin-bottom: -.5%;
+		}
+
+		.containerTop {
+			padding-top: 50px;
+			height: 600px;
+			display: inline-flex;
+			align-items: center;
+			width: 100%;
+			background-color: white;
+		}
+		.containerTop .topLeft {
+			display: flex;
+			flex-direction: column;
+			justify-content: left;
+			text-align: left;
+			max-width: 600px;
+			float: left;
+			margin-top: 0%;
+			margin-left: 15%;
+		}
+
+		.containerTop .topRight {
+			background-image: url("overview-1.png");
+			height: inherit;
+			background-size: contain;
+			background-repeat: no-repeat;
+			float: right;
+			border: 1px solid red;
+			width: 600px;
+			margin-left: 5%;
+			margin-top: 5%;
+		}
+		.containerMid {
+			padding-top: 50px;
+			height: 500px;
+			display: inline-flex;
+			align-items: center;
+			width: 100%;
+			background-color: white;
+		}
+		.containerMid .mid_right {
+			display: flex;
+			flex-direction: column;
+			justify-content: right;
+			text-align: left;
+			border: 1px solid red;
+			max-width: 600px;
+			float: right;
+			margin-top: 0%;
+			padding-left: 10%;
+		}
+
+		.containerMid .mid_left {
+			background-image: url("StatusPage_spot-hero.03.png");
+			height: inherit;
+			background-size: contain;
+			background-repeat: no-repeat;
+			float: left;
+			width: 700px;
+			margin-left: 15%;
+			margin-top: 5%;
+		}
+		.containerBottom {
+			padding-top: 50px;
+			height: 600px;
+			display: inline-flex;
+			align-items: center;
+			width: 100%;
+			background-color: white;
+		}
+		.containerBottom .bottomLeft{
+			display: flex;
+			flex-direction: column;
+			justify-content: left;
+			text-align: left;
+			border: 1px solid red;
+			max-width: 600px;
+			float: left;
+			margin-top: 0%;
+			margin-left: 15%;
+		}
+
+		.containerBottom .bottomRight {
+			background-image: url("overview-3-new.png");
+			height: inherit;
+			background-size: contain;
+			background-repeat: no-repeat;
+			float: right;
+			border: 1px solid red;
+			width: 700px;
+			margin-left: 5%;
+			margin-top: 5%;
+		}
+		.title {
+			margin-top: 50px;
+			text-align: center;
+			height: 120px;
+		}
+		.spacer {
+			height: 50px;
+		}
+		.spacer hr {
+			margin-top: 10%;
+			margin-left: 15%;
+			text-align: center;
+			max-width: 1100px;
+		}
+		.customers {
+			padding-top: 50px;
+			height: 500px;
+			align-items: center;
+			max-width: 1200px;
+			background-color: white;
+		}
+		.wrapper {
+			display: grid;
+			margin-left: 18%;
+		 	grid-template-columns: 27% 27% 27% 27%;
+			grid-gap: 30px;
+  			background-color: #fff;
+	  		color: #444;
+
+		}
+		.customerBox {
+			border: 1px solid red;
+			height: 290px;
+
+		}
+		.customerBox_img {
+			background: black;
+			height: 67%;
+		}
+		.testimonial {
+			padding-top: 50px;
+			height: 700px;
+			align-items: center;
+			max-width: 1200px;
+			background-color: white;
+		}
+		.testimonial_wrapper {
+			display: grid;
+			margin-left: 18%;
+		 	grid-template-columns: 57% 57%;
+			grid-gap: 30px;
+  			background-color: #fff;
+	  		color: #444;
+
+		}
+		.testimonialBox {
+			height: 600px;
+
+		}
+		.testimonialBox_img_Dropbox {
+			background: url("dropbox.jpg");
+			background-size: cover;
+			background-position: center center;
+			border-radius: 5px;
+			margin-bottom: 30px;
+			height: 50%;
+		}
+		.testimonialBox_img_DigitalOcean {
+			background: url("digitalocean.jpg");
+			background-size: cover;
+			background-position: center center;
+			border-radius: 5px;
+			margin-bottom: 30px;
+			height: 50%;
+		}
+		.testimonialBox_info {
+			text-align: center;
+		}
+		.testimonialBox_info h3{
+			font-size: 21px;
+			font-weight: bold;
+		}
+		.testimonialBox_info a{
+			font-size: 16px;
+		}
+
+		#blueWave {
+			background: white;
+			margin-bottom: -.5%;
+		}
+		.blueCont {
+			height: 1100px;
+			color: white;
+			background-color: #0052CC ;
+		}
+
+		.blueCont h3, .blueCont h2, .blueCont a {
+			color: white;
+		}
+
+		.blueCont_teams {
+			display: inline-flex;
+		}
+
+		.blueCont_teams .blueCont_img {
+			width: 70%;
+			margin-left: 15%;
+			background: url("Exploring Possibilities@2x.png");
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
+		.blueCont ul {
+			margin-left: 5%;
+			width: 1400px;
+		}
+		.BlueBox img {
+			margin-left: -15%;
+			max-width: 40px;
+		}
+
+		.blue_title {
+			margin-top: 5%;
+			display: inline-flex;
+		}
+
+		.blue_title h3 {
+			width: 400px;
+			margin-left: 4%;
+		}
+		.BlueBox .blue_spacer {
+			height: 200px;
+		}
+		.pricing {
+			height: 700px;
+			max-width: 1400px;
+			margin-left: 5%;
+		}
+		.pricing section {
+			display: none;
+			padding: 20px 0 0;
+			border-top: 1px solid #abc;
+		}
+
+		.pricing input {
+			display: none;
+		}
+
+		.pricing label {
+			display: inline-block;
+			margin: 0 -2px -1px;
+			padding: 15px 170px;
+			font-weight: 600;
+			text-align: center;
+			color: #abc;
+			border: 1px solid ;
+		}
+		label:hover {
+ 			background: grey;
+		}
+
+		#public_label {
+			border-right: none;
+		}
+
+		.pricing label:before {
+			font-weight: normal;
+			margin-right: 10 px;
+		}
+
+		.pricing input:checked + label {
+		    border: 1px solid #abc;
+		    border-top: 1px solid;
+		    border-bottom: 1px solid #fff;
+		}
+
+		#public_page:checked ~ #public_content,
+		#private_page:checked ~ #private_content {
+			display: block;
+		}
+
+		.pricing_content {
+			display: grid;
+			margin-left: 10%;
+		 	grid-template-columns: 21% 21% 21% 21%;
+			grid-gap: 29px;
+  			background-color: #fff;
+	  		color: #444;
+		}
+
+		.price_box {
+			height: 700px;
+		}
+
+		.price_box_top {
+			height:45%;
+			padding: 30px 25px 30px 25px;
+			background: #F4F5F7;
+			border-radius: 4px;
+		}
+
+		.price_box_top button {
+			padding: 10px 25px 10px 25px;
+			background: #0047B3;
+			font-size: 16px;
+			border-style: none;
+			border-radius: 4px;
+			color: white;
+		}
+		.price_box_bottom {
+			padding-top: 50px;
+			height: 55%;
+		}
+
+		.price_box li {
+			text-align: left;
+		}
+
+		.price_box li:before {
+			color: green;
+			padding-right: 10px;
+ 			content: '✓';
+		}
+
+		.blue_divider {
+			padding-top: 10px;
+			padding-bottom: 10px;
+			height: 250px;
+			background: #0052CC;
+			color: white;
+		}
+
+		.blue_divider h2 {
+			color: white;
+		}
+
+		.blue_divider button {
+			padding: 10px 30px 10px 30px;
+			background: #FF991F;
+			border-radius: 4px;
+			border-style: none;
+			font-size: 16px;
+			color: #172B4D;
+		}
+
+		.page_directory {
+			display: grid;
+			margin-left: 14%;
+		 	grid-template-columns: 13% 11% 11% 11% 11%;
+			grid-gap: 29px;
+  			background-color: #fff;
+	  		color: #444;
+		}
+		.page_directory section{
+			height: 200px;
+		}
+
+		.page_directory h3 {
+			text-align: left;
+		}
+
+		.page_directory li {
+			line-height: 10px;
+		}
+
+		.page_directory a {
+			margin-left: -18px;
+			font-size: 14px;
+			color: #253858;
+		}
+		#logo {
+			margin-top: 4px;
+			background: url("Statuspage-neutral.svg");
+			background-repeat: no-repeat;
+		}
+
+		#bottom_spacer {
+			margin-top: 0%;
+			text-align: center;
+			width: 100%;
+		}
+
+		.footer {
+			display: grid;
+			margin-left: 10%;
+		 	grid-template-columns: 16% 11% 11% 11% 40%;
+			grid-gap: 20px;
+  			background-color: #fff;
+	  		color: #444;
+		}
+		.footer section{
+			height: 50px;
+			border: 1px solid red;
+		}
+
+		#social {
+			text-align: center;
+		}
+
+		#social img {
+			padding: 4px;
+			max-height: 50px;
+			max-width: 50px;
+		}
+		#features ul{
+			display: none;
+		}
+	</style>
+	<script>
+		$(document).ready(function(){
+			$(window).on('scroll', function(){
+				if($(window).scrollTop()) {
+					$(".sub-header").addClass('.active')
+				} else {
+					$(".sub-header").removeClass('.active')
+				}
+			})
+		});
+	</script>
+</head>
+<body>
+	<div class="header">
+		<div class="sub-header">
+			<ul class="left-menu">
+				<li>
+					<div class="logo">
+						<a href="#"><img src="https://statuspage-marketing-cdn.atlassian.com/dam/jcr:4e7ec08f-445f-4917-b9de-b836b29c0dbc/Statuspage-Attribution-blue-rgb.svg?cdnVersion=kf, https://www.statuspage.io/"></a>
+						<button class="dropbtn" onclick="myFunction()">&#9776;
+		      				<i class="fa fa-caret-down"></i>
+						</button>
+					</div>
+				</li>
+				<li><button>Features_</button>
+					<div id=#features>
+						<ul>
+						<li>A</li>
+						<li>B</li>
+					</ul>
+				</div>
+				</li>
+				<li><a href="#features">Pricing</a></li>
+				<li><a href="#features">Customers_</a></li>
+				<li><a href="#features">Integrations</a></li>
+			</ul>
+			<ul class="dropdown">
+				<li>
+					<button class="dropbtn" onclick="myFunction()">&#9776;
+		      				<i class="fa fa-caret-down"></i>
+						</button>
+				</li>
+			</ul>
+			<ul class="right-menu">
+				<li><a href="#features">Log In</a></li>
+				<li>
+					<div class="signup">
+						<a href="#features">SignUp</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="intro">
+		<div class="intro-left">
+			<h2>
+			<span class="text_before_word">
+				The #1 status and incident <br />
+				communication tool.<br />
+				Just ask </span>
+			<span id="word">Twilio</span>
+			<span id="period">.</span>
+			<script>
+				let words = ['Citrix', 'Reddit', 'Kickstarter'],
+					element = document.getElementById("word");
+					currentWord = -1;
+				window.setInterval(function() {
+					currentWord++;
+					if(currentWord > words.length) currentWord = 0;
+					element.textContent = words[currentWord];
+				}, 5000);
+			</script>
+			</h2>
+			<div class=introBtn>
+			<button class="tryForFree">
+				Try it free
+			</button>
+			</div>
+			<a href="#"><i class="fa fa-play-circle"></i>  Here's how it works</a>
+		</div>
+		<div class="intro-right">
+		</div>
+	</div>
+	<div id="wave">
+		<svg xmlns="http://www.w3.org/2000/svg" class="curve-container__curve curve-three" viewBox="0 0 1440 68" enable-background="new 0 0 1440 68"><path d="m1622.3 1937.7c0 0-410.7 169.1-913.4 75.5-502.7-93.6-977.7 56.3-977.7 56.3v440h1891.1v-571.8" fill="white" transform="translate(0-1977)"></path></svg>
+	</div>
+	<div class="title">
+		<h2>Your way to turn a bad situation into a memorable customer<br>experience</h2>
+	</div>
+	<div class="containerTop">
+		<div class="topLeft">
+			<p>SUPPORT & DEV TEAMS</p>
+			<h2> Cut support costs</h2>
+			<p>Whether it's a server issue, bug in production, or DDoS<br>attack, the simple truth is that downtime happens. Launch<br> your status page to ditch the flood of support emails and<br> let your team focus on fixing the problem at hand.</p>
+		</div>
+		<div class="topRight">
+		</div>
+	</div>
+	<div class="containerMid">
+		<div class="mid_left">
+		</div>
+		<div clas="mid_right">
+			<h3>END USERS</h3>
+			<h2>Build customer trust</h2>
+			<p>Customers value transparency. Allow them to opt into real<br>-time incident and scheduled maintenance notifications via<br> Email, SMS, or Webhook. Trust us, they’ll thank you.</p>
+		</div>
+	</div>
+	<div class="spacer">
+	</div>
+	<div class="containerBottom">
+		<div class="bottomLeft">
+			<p>SALES & MARKETING TEAMS</p>
+			<h2>Showcase reliability</h2>
+			<p>Downtime communication is only part of the story when it<br> comes to status pages. Tell the other 99.95% of your story<br> with Uptime Showcase by surfacing your availability and <br>reliability to prospective customers. </p>
+		</div>
+		<div class="bottomRight">
+		</div>
+	</div>
+	<div class="spacer">
+		<hr>
+	</div>
+	<div class="title">
+		<h2>Here are a few of our happiest customers</h2>
+		<p>We're trusted by thousands of companies across web tech</p>
+	</div>
+	<div class="customers">
+		<div class="wrapper">
+			<div class="customerBox">
+				<div class="customerBox_img"></div>
+				<div class="customerBox_info">
+					<h4>New Relic</h4>
+					<a href="#">View Status Page</a>
+				</div>
+			</div>
+			<div class="customerBox">
+				<div class="customerBox_img"></div>
+				<div class="customerBox_info">
+					<h4>Twilio</h4>
+					<a href="#">View Status Page</a>
+				</div>
+			</div>
+			<div class="customerBox">
+				<div class="customerBox_img"></div>
+				<div class="customerBox_info">
+					<h4>Dropbox</h4>
+					<a href="#">View Status Page</a>
+				</div>
+			</div>
+			<div class="customerBox">
+				<div class="customerBox_img"></div>
+				<div class="customerBox_info">
+					<h4>GoToMeeting</h4>
+					<a href="#">View Status Page</a>
+				</div>
+			</div>
+			<div class="customerBox">
+				<div class="customerBox_img"></div>
+				<div class="customerBox_info">
+					<h4>DigitalOcean</h4>
+					<a href="#">View Status Page</a>
+				</div>
+			</div>
+			<div class="customerBox">
+				<div class="customerBox_img"></div>
+				<div class="customerBox_info">
+					<h4>Shopify</h4>
+					<a href="#">View Status Page</a>
+				</div>
+			</div>
+			<div class="customerBox">
+				<div class="customerBox_img"></div>
+				<div class="customerBox_info">
+					<h4>Recurly</h4>
+					<a href="#">View Status Page</a>
+				</div>
+			</div>
+			<div class="customerBox">
+				<div class="customerBox_img"></div>
+				<div class="customerBox_info">
+					<h4>Coinbase</h4>
+					<a href="#">View Status Page</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="spacer"></div>
+	<div class="spacer">
+		<hr>
+	</div>
+	<div class="testimonial">
+		<div class="testimonial_wrapper">
+			<div class="testimonialBox">
+				<div class="testimonialBox_img_Dropbox"></div>
+				<div class="testimonialBox_info">
+					<img src="logoDropbox-1.svg">
+					<h3>“One of the best things about Statuspage is that even<br> if Dropbox is down, it’s always up.”</h3>
+					<h4>Gavin Gillock</h4>
+					<p>Global Program Manager</p>
+					<a href="#"><i class="fa fa-play-circle"></i> See their story</a>
+				</div>
+			</div>
+			<div class="testimonialBox">
+				<div class="testimonialBox_img_DigitalOcean"></div>
+				<div class="testimonialBox_info">
+					<img src="logoDigitalOcean.svg">
+					<h3>“Proactive Statuspage notifications drive down ticket<br> volume during an incident.”</h3>
+					<h4>Zachary Bouzan-Kaloustian</h4>
+					<p>Director of Customer Support</p>
+					<a href="#"><i class="fa fa-play-circle"></i> See their story</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="blueCont">
+
+		<div id='blueWave'>
+			<svg xmlns="http://www.w3.org/2000/svg" class="curve-container__curve curve-two" viewBox="0 0 1440 68" enable-background="new 0 0 1440 68"><path d="m1622.3 1937.7c0 0-410.7 169.1-913.4 75.5-502.7-93.6-977.7 56.3-977.7 56.3v440h1891.1v-571.8" fill="#F4F5F7" transform="translate(0-1977)"></path></svg>
+		</div>
+
+		<div class="title">
+			<h2>How can Statuspage help you?</h2>
+			<p>Having a status page benefits the whole organization</p>
+		</div>
+		<div class="spacer">
+		</div>
+		<div class="blueCont_teams">
+			<div class="blueCont_img"></div>
+			<ul class="blueCont_wrapper">
+				<li class="BlueBox">
+					<div class=blue_title>
+						<img src="organize-infinite.svg">
+						<h3>DevOps Teams</h3>
+					</div>
+					<p>When servers are on fire, your team needs to be focused on fixing the issue at hand<br> - not responding to an endless amount of internal emails. With Statuspage, your<br> Dev and Operations teams can communicate efficiently and effectively, giving you<br> the space needed to resolve incidents.</p>
+					<a href="#">Learn more _</a>
+				</li>
+				<li class="BlueBox">
+					<div class=blue_title>
+						<img src="admin-agent.svg">
+						<h3>Support Teams</h3>
+					</div>
+					<p>Downtime doesn't have to be a support nightmare. Our customers have seen<br> dramatic reductions in support tickets after launching their status pages. Point <br>customers to your new status page a few times and they'll learn to both check the<br> status page and subscribe to proactive notifications instead of contacting support.</p>
+					<a href="#">Learn more _</a>
+				</li>
+				<li class="BlueBox">
+					<div class=blue_title>
+						<img src="admin-tools.svg">
+						<h3>IT Teams</h3>
+					</div>
+					<p>Statuspage isn’t just for your customers, it’s for your employees too! Hundreds of<br> companies are using Statuspage internally to communicate around IT and third<br> party cloud services. With the Jira Service Desk integration, IT Managers are saving<br> hours per week by embedding IT incidents directly on internal help desks.</p>
+					<a href="#">Learn more _</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="title">
+		<h2>Pricing that scales with you as you grow</h2>
+		<p>No minimum contracts, no sign-up fees, no cancellation fees</p>
+	</div>
+	<div class="pricing">
+		<center>
+			<input type="radio" name="tabs" id="public_page" checked="checked">
+			<label for="public_page" id="public_label">Public Page</label>
+
+			<input type="radio" name="tabs" id="private_page">
+			<label for="private_page">Private Page</label>
+
+			<section id="public_content">
+				<div class="pricing_content">
+					<div class="price_box">
+						<div class="price_box_top">
+							<h3>Hobby</h3>
+							<h1>$29</h1>
+							<p>/month</p>
+							<button>Get started today</button>
+						</div>
+						<div class="price_box_bottom">
+							<ul>
+								<li>250 Subscribers</li>
+								<li>2 Team Members</li>
+    							<li>2 Metrics</li>
+							    <li>Email Notifications</li>
+							    <li>Basic Customization</li>
+							    <li>Status & Authenticated API</li>
+							</ul>
+						</div>
+					</div>
+					<div class="price_box">
+						<div class="price_box_top">
+							<h3>Startup</h3>
+							<h1>$99</h1>
+							<p>/month</p>
+							<button>Get started today</button>
+						</div>
+						<div class="price_box_bottom">
+							<ul>
+								<li>1,000 Subscribers</li>
+								<li>10 Team Members</li>
+    							<li>10 Metrics</li>
+							    <li>Email/SMS/Webhook Notifications</li>
+							    <li>Custom CSS</li>
+							    <li>Status & Authenticated API</li>
+							    <li>Team Member SSO</li>
+							</ul>
+						</div>
+					</div>
+					<div class="price_box">
+						<div class="price_box_top">
+							<h3>Business</h3>
+							<h1>$399</h1>
+							<p>/month</p>
+							<button>Get started today</button>
+						</div>
+						<div class="price_box_bottom">
+							<ul>
+								<li>5,000 Subscribers</li>
+								<li>25 Team Members</li>
+    							<li>25 Metrics</li>
+							    <li>Email/SMS/Webhook Notifications</li>
+							    <li>Custom CSS/HTML/JS</li>
+							    <li>Status & Authenticated API</li>
+							    <li>Team Member SSO</li>
+							    <li>Component Subscriptions</li>
+							    <li>Yearly PO & Invoicing Available</li>
+							</ul>
+						</div>
+					</div>
+					<div class="price_box">
+						<div class="price_box_top">
+							<h3>Enterprise</h3>
+							<h1>$1,499</h1>
+							<p>/month</p>
+							<button>Request demo</button>
+						</div>
+						<div class="price_box_bottom">
+							<ul>
+								<li>25,000 Subscribers</li>
+								<li>50 Team Members</li>
+    							<li>50 Metrics</li>
+							    <li>Email/SMS/Webhook Notifications</li>
+							    <li>Custom CSS/HTML/JS</li>
+							    <li>Status & Authenticated API</li>
+							    <li>Team Member SSO</li>
+							    <li>Component Subscriptions</li>
+							    <li>Yearly PO & Invoicing Available</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="private_content">
+				<div class="pricing_content">
+					<div class="price_box">
+					<div class="price_box_top">
+							<h3>Starter</h3>
+							<h1>$79</h1>
+							<p>/month</p>
+							<button>Get started today</button>
+						</div>
+						<div class="price_box_bottom">
+							<ul>
+								<li>5 Team Members</li>
+								<li>50 Employees</li>
+    							<li>5 Metrics</li>
+							    <li>Email Notifications</li>
+							    <li>Custom CSS</li>
+							    <li>Incident Templates</li>
+							    <li>PagerDuty & VictorOps Integrations</li>
+							    <li>Team Member & Employee SSO</li>
+							</ul>
+						</div>
+					</div>
+					<div class="price_box">
+						<div class="price_box_top">
+							<h3>Growth</h3>
+							<h1>$249</h1>
+							<p>/month</p>
+							<button>Get started today</button>
+						</div>
+						<div class="price_box_bottom">
+							<ul>
+								<li>15 Team Members</li>
+								<li>300 Employees</li>
+    							<li>15 Metrics</li>
+    							<li>Email/SMS/Webhook Notifications</li>
+							    <li>Custom CSS/HTML/JS</li>
+							    <li>Incident Templates</li>
+							    <li>PagerDuty & VictorOps Integrations</li>
+							    <li>Component Subscriptions</li>
+							    <li>IP Whitelisting</li>
+							    <li>Team Member & Employee SSO</li>
+							</ul>
+						</div>
+					</div>
+					<div class="price_box">
+						<div class="price_box_top">
+							<h3>Corporate</h3>
+							<h1>$599</h1>
+							<p>/month</p>
+							<button>Get started today</button>
+						</div>
+						<div class="price_box_bottom">
+							<ul>
+								<li>35 Team Members</li>
+								<li>1,000 Employees</li>
+    							<li>35 Metrics</li>
+    							<li>Email/SMS/Webhook Notifications</li>
+							    <li>Custom CSS/HTML/JS</li>
+							    <li>Incident Templates</li>
+							    <li>PagerDuty & VictorOps Integrations</li>
+							    <li>Component Subscriptions</li>
+							    <li>IP Whitelisting</li>
+							    <li>Team Member & Employee SSO</li>
+							    <li>Yearly PO & Invoicing Available</li>
+							</ul>
+						</div>
+					</div>
+					<div class="price_box">
+						<div class="price_box_top">
+							<h3>Enterprise</h3>
+							<h1>$1,499</h1>
+							<p>/month</p>
+							<button>Request demo</button>
+						</div>
+						<div class="price_box_bottom">
+							<ul>
+								<li>50 Team Members</li>
+								<li>5,0000 Employees</li>
+    							<li>50 Metrics</li>
+    							<li>Email/SMS/Webhook Notifications</li>
+							    <li>Custom CSS/HTML/JS</li>
+							    <li>Incident Templates</li>
+							    <li>PagerDuty & VictorOps Integrations</li>
+							    <li>Component Subscriptions</li>
+							    <li>IP Whitelisting</li>
+							    <li>Team Member & Employee SSO</li>
+							    <li>Yearly PO & Invoicing Available</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+		</center>
+	</div>
+
+	<div class="spacer"></div>
+	<div class="spacer"></div>
+	<div class="blue_divider">
+		<div class="title">
+			<h2>See Statuspage in action. Sign up for a demo.</h2>
+			<p>Get to know the ins and outs of Statuspage. Book your spot for a 30-minute product overview with live Q&A.</p>
+			<button>Sign up</button>
+		</div>
+	</div>
+	<div class="spacer"></div>
+	<div class="page_directory">
+		<section id="logo"></section>
+		<section>
+			<h3>Products</h3>
+			<ul>
+				<li><a href="#">Features</a></li>
+				<li><a href="#">Pricing</a></li>
+				<li><a href="#">Customers</a></li>
+				<li><a href="#">Integrations</a></li>
+				<li><a href="#">Register for demo</a></li>
+				<li><a href="#">Better error pages</a></li>
+			</ul>
+		</section>
+		<section>
+			<h3>Community</h3>
+			<ul>
+				<li><a href="#">Blog</a></li>
+				<li><a href="#">Twitter</a></li>
+				<li><a href="#">Atlassian Community</a></li>
+				<li><a href="#">Customer Survey</a></li>
+				<li><a href="#">HugOps</a></li>
+			</ul>
+		</section>
+		<section>
+			<h3>Support</h3>
+			<ul>
+				<li><a href="#">Metastatuspage.com</a></li>
+				<li><a href="#">API Docs</a></li>
+				<li><a href="#">Knowledge Base</a></li>
+				<li><a href="#">Email us</a></li>
+			</ul>
+		</section>
+		<section>
+			<h3>Legal</h3>
+			<ul>
+				<li><a href="#">Customer Agreement</a></li>
+				<li><a href="#">Privacy Policy</a></li>
+				<li><a href="#">Security</a></li>
+			</ul>
+		</section>
+	</div>
+	<hr>
+	<div class="footer">
+		<section>
+			<p>languages</p>
+		</section>
+		<section>
+			<a href="#">Privacy Policy</a>
+		</section>
+		<section>
+			<a href="#">Privacy Policy</a>
+		</section>
+		</section>
+		<section>
+			<a href="#">Privacy Policy</a>
+		</section>
+		</section>
+		<section id="social">
+			<a href="#"><img src="kisspng-social-media-computer-icons-facebook-media-icon-5ad99bd4f25381.4341429415242106449926.jpg"></a>
+			<a href="#"><img src="kisspng-social-media-computer-icons-facebook-media-icon-5ad99bd4f25381.4341429415242106449926.jpg"></a>
+			<a href="#"><img src="kisspng-social-media-computer-icons-facebook-media-icon-5ad99bd4f25381.4341429415242106449926.jpg"></a>
+			<a href="#"><img src="kisspng-social-media-computer-icons-facebook-media-icon-5ad99bd4f25381.4341429415242106449926.jpg"></a>
+		</section>
+	<div>
+</body>
+</html>
